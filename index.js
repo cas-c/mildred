@@ -44,18 +44,6 @@ client.on('ban', (channel, username, reason) => {
                     .addField('Reason', reason !== null ? reason : 'No reason provided.')
             );
 })
-//client.on('logon', () => {
-    //mildred.channels.get(config.home).send('logged into twitch!');
-//});
-
-//client.on('connected', (address, port) => {
-    //mildred.channels.get(config.home).send(`connected to twitch @ ${address} ${port}`);
-//});
-
-client.on('disconnected', (reason) => {
-    mildred.channels.get(config.home).send(`disconnected from twitch due to: ${reason}`);
-    client.connect();
-})
 
 mildred.on('message', message => {
     if (message.cleanContent.startsWith('?m test')) {
